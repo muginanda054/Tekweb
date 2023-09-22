@@ -8,60 +8,32 @@
   </head>
 
   <body>
-    <h1>Tugas 3</h1>
-  <h2>Komang Mugi Nanda Prasasta (2215101054)</h2>
-  <h3>Kelas B</h3>
+    <header>
+        <p><b>Tugas 3</b></p>
+        <p>Komang Mugi Nanda Prasasta (2215101054)</p>
+        <p>Kelas B</p>
+    </header>
   <div>
     <div style="float: left;width: 50%">
         <h4>Fibonacci</h4>
-            <form id="form">
-                <input type="text" placeholder="Masukan Angka fibonacci" id="angka" />
-                <button type="submit">Cari</button>
-              </form>
-          
-              <script>
-                const form = document.getElementById("form");
-                const angka = document.getElementById("angka");
-          
-                form.addEventListener("submit", function (e) {
-                  e.preventDefault();
-                  alert(fibonacci(angka.value));
-                });
-          
-                function fibonacci(n) {
-                  if (n == 0) return 0;
-                  if (n == 1) return 1;
-          
-                  return fibonacci(n - 1) + fibonacci(n - 2);
-                }
-          
-              </script>
+        <p><label for="inputVariable">Masukkan Nilai:</label></p>
+        <input type="number" id="inputVariable">
+        <button onclick="hitungFibonacci()">Hitung Fibonacci</button>
+        <div id="hasilPerhitungan"></div>
+        <script src="fibonacci.js"></script>
     </div>
-    <div style="float: right;width: 50%"></div>
+    <div style="float: right;width: 50%">
         <h4>Volume Balok</h4>
-            <form id="form1">
-                <input type="text" placeholder="Masukan Panjang" id="panjang" />
-                <input type="text" placeholder="Masukan Lebar" id="lebar" />
-                <input type="text" placeholder="Masukan Tinggi" id="tinggi" />
-            <button type="submit">Hasil</button>
-          </form>
-      
-          <script>
-            const form1 = document.getElementById("form1");
-            const panjang = document.getElementById("panjang");
-            const lebar = document.getElementById("lebar");
-            const tinggi = document.getElementById("tinggi");
-      
-            form.addEventListener("submit", function (e) {
-              e.preventDefault();
-              alert(VolumeBangungRuang(panjang.value, lebar.value, tinggi.value));
-            });
-      
-            function VolumeBangungRuang(p, l, t) {
-              return p * l * t;
-            }
-          </script>
-  </div>
+        <p><label for="panjang">Masukkan Panjang:</label></p>
+        <input type="number" id="panjang">
+        <p><label for="lebar">Masukkan Lebar:</label></p>
+        <input type="number" id="lebar">
+        <p><label for="tinggi">Masukkan Tingii:</label></p>
+        <input type="number" id="tinggi">
+        <button onclick="HitungBalok()">Hitung Volume Balok</button>
+        <div id="VolumeBalok"></div>
+        <script src="balok.js"></script>
+    </div>
   </div>
     
   </body>

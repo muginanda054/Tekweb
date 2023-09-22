@@ -6,7 +6,6 @@ function fibonacci(n) {
     }
 }
 
-// Fungsi untuk menghitung dan menampilkan deret Fibonacci menggunakan kelas
 class Fibonacci {
     constructor(n) {
         this.n = n;
@@ -26,5 +25,31 @@ class Fibonacci {
         }
 
         return result;
+    }
+}
+
+function hitungFibonacci() {
+    const inputNumber = document.getElementById("inputVariable").value;
+    const resultElement = document.getElementById("hasilPerhitungan");
+
+    if (inputNumber === "") {
+        resultElement.innerText = "Silakan masukkan suku ke-n.";
+        return;
+    }
+
+    const n = parseInt(inputNumber);
+
+    if (isNaN(n)) {
+        resultElement.innerText = "Masukkan angka yang valid.";
+    } else {
+        const recursiveResult = fibonacci(n);
+        
+        const fibonacciInstance = new Fibonacci(n);
+        const iterativeResult = fibonacciInstance.output();
+
+        resultElement.innerHTML = `
+            Suku ke-${n} dari deret Fibonacci (Rekursi): ${recursiveResult}<br>
+            Suku ke-${n} dari deret Fibonacci (Iteratif): ${iterativeResult.join(", ")}
+        `;
     }
 }
