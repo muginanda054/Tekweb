@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perhitungan Volume</title>
+  </head>
+  <h1>Aplikasi Sederhana Untuk Menghitung</h1>
+  <body>
+    <form id="form">
+      <input type="text" placeholder="Masukan Panjang" id="panjang" />
+      <input type="text" placeholder="Masukan Lebar" id="lebar" />
+      <input type="text" placeholder="Masukan Tinggi" id="tinggi" />
+      <button type="submit">Hasil</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("form");
+      const panjang = document.getElementById("panjang");
+      const lebar = document.getElementById("lebar");
+      const tinggi = document.getElementById("tinggi");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert(VolumeBangungRuang(panjang.value, lebar.value, tinggi.value));
+      });
+
+      function VolumeBangungRuang(p, l, t) {
+        return p * l * t;
+      }
+    </script>
+  </body>
+</html>
